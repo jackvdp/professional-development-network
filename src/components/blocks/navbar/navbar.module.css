@@ -1,0 +1,6 @@
+.navbarCloneNobg {
+    z-index: 1008;
+    position: absolute !important;
+    box-shadow: 0rem 0rem 1.25rem rgba(30, 34, 40, 0.06);
+    background-color: white;
+}
