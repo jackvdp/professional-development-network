@@ -16,7 +16,19 @@ const FigureImage: FC<FigureImageProps> = (props) => {
 
     return (
         <figure className={className} {...others}>
-            <Image width={width} height={height} src={src} alt="" objectFit="cover" layout="responsive" quality="100"/>
+            <Image 
+                width={width} 
+                height={height} 
+                src={src} 
+                alt="" 
+                style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                    objectPosition: 'center'
+                }}
+                quality={100}
+            />
         </figure>
     );
 };

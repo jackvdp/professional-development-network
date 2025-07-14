@@ -65,7 +65,26 @@ const ArticlesPage: NextPage<ArticlesProps> = ({articles}) => {
                                                     <figure className="card-img-top overlay overlay-1 hover-scale">
                                                          <a className="link-dark" href={articles[0].link}>
                               {
-                                articles[0].image && <Image width={960} height={600} src={articles[0].image} alt="blog" layout="responsive" />
+                                articles[0].image && (
+                                  <div style={{ 
+                                    aspectRatio: '16/9', 
+                                    overflow: 'hidden',
+                                    position: 'relative'
+                                  }}>
+                                    <Image 
+                                      width={960} 
+                                      height={540} 
+                                      src={articles[0].image} 
+                                      alt="blog" 
+                                      style={{ 
+                                        width: '100%', 
+                                        height: '100%', 
+                                        objectFit: 'cover',
+                                        objectPosition: 'center'
+                                      }} 
+                                    />
+                                  </div>
+                                )
                               }
                               <span className="bg" />
                             </a>

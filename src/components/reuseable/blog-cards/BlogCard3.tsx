@@ -22,10 +22,10 @@ const BlogCard3: FC<BlogCard3Props> = (props) => {
   return (
     <article className="item post col-md-6">
       <div className="card">
-        <figure className="card-img-top overlay overlay-1 hover-scale">
+        <figure className={`card-img-top overlay overlay-1 hover-scale ${Style.aspectRatio16_9}`}>
           <Link href={link} legacyBehavior={true}>
             <a>
-              <FigureImage width={560} height={350} src={image} />
+              <FigureImage width={960} height={540} src={image} />
               <span className="bg" />
             </a>
           </Link>
