@@ -23,7 +23,7 @@ const ArticlesPage: NextPage<ArticlesProps> = ({articles}) => {
         <Fragment>
             <CustomHead
                 title="Articles"
-                description="Expert insights, best practices, and analysis on election management, electoral processes, and innovations in democratic systems from leading professionals."
+                description="Discover Expert Perspectives: In-Depth Articles Exploring the World of Professional Development."
             />
             <PageProgress/>
 
@@ -38,7 +38,7 @@ const ArticlesPage: NextPage<ArticlesProps> = ({articles}) => {
                             <div className="col-md-7 col-lg-6 col-xl-5 mx-auto">
                                 <h1 className="display-1 mb-3">Articles</h1>
                                 <p className="lead px-lg-5 px-xxl-8">
-                                    Discover Expert Perspectives: In-Depth Articles Exploring the World of Elections
+                                    Discover Expert Perspectives: In-Depth Articles Exploring the World of Professional Development
                                 </p>
                             </div>
                         </div>
@@ -63,12 +63,12 @@ const ArticlesPage: NextPage<ArticlesProps> = ({articles}) => {
                                                 date={articles[0].date}
                                                 cardTop={
                                                     <figure className="card-img-top overlay overlay-1 hover-scale">
-                                                        {/* <a className="link-dark" href={articles[0].link}>
+                                                         <a className="link-dark" href={articles[0].link}>
                               {
                                 articles[0].image && <Image width={960} height={600} src={articles[0].image} alt="blog" layout="responsive" />
                               }
                               <span className="bg" />
-                            </a> */}
+                            </a>
 
                                                         <figcaption>
                                                             <h5 className="from-top mb-0">Read More</h5>
