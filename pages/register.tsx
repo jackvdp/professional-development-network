@@ -31,7 +31,7 @@ const RegisterPage: NextPage = () => {
         <Fragment>
             <CustomHead
                 title="Register"
-                description="Join the Electoral Stakeholders' Network. Create an account to connect with electoral professionals, access exclusive resources, and participate in our global community."
+                description="Join the Professional Development Network. Create an account to connect with public service professionals, access exclusive resources, and advance your career."
             />
             <PageProgress/>
 

@@ -38,7 +38,7 @@ const ForgotPassword: React.FC = () => {
         <Fragment>
             <CustomHead
                 title="Forgot Password"
-                description="Forgot your password? No worries! Enter your email address and we'll send you a password reset link."
+                description="Reset your Professional Development Network password. Enter your email address and we'll send you a secure password reset link."
             />
             <PageProgress/>
 

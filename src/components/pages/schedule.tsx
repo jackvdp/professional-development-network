@@ -12,7 +12,7 @@ const Schedule= ({ schedule, headTitle, dates  }: { schedule: Day[], headTitle: 
         <Fragment>
             <CustomHead
                 title={headTitle}
-                description="Celebrating excellence in electoral management. Recognizing outstanding contributions and innovations in election administration and democratic processes."
+                description="Professional development event schedule. Explore our comprehensive program of training sessions, workshops, and networking opportunities designed to advance your public service career."
             />
             <PageProgress/>
 

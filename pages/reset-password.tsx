@@ -57,7 +57,7 @@ const ResetPassword: React.FC = () => {
         <>
             <CustomHead
                 title="Set a New Password"
-                description="Reset your password to regain access to your account."
+                description="Reset your Professional Development Network password to regain access to your account and continue your professional growth journey."
             />
             <PageProgress/>
             <Navbar/>

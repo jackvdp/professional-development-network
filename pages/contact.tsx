@@ -13,7 +13,7 @@ const ContactPage: NextPage = () => {
         <Fragment>
             <CustomHead
                 title="Contact"
-                description="Get in touch with the Electoral Stakeholders' Network. Connect with electoral professionals and management bodies worldwide."
+                description="Get in touch with the Professional Development Network. Connect with public service professionals and expand your career development opportunities."
             />
 
             <PageProgress/>
