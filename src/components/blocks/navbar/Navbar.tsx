@@ -6,7 +6,6 @@ import {useAuth} from "auth/useAuth";
 import NextLink from 'components/reuseable/links/NextLink';
 import SocialLinks from 'components/reuseable/links/SocialLinks';
 import ListItemLink from 'components/reuseable/links/ListItemLink';
-import DropdownToggleLink from 'components/reuseable/links/DropdownToggleLink';
 import RegisterLink from 'components/reuseable/links/RegisterLink';
 // -------- partial header component -------- //
 import Info from './partials/Info';
@@ -55,63 +54,9 @@ const NavbarICPS: FC<NavbarProps> = ({barSitsOnTop}) => {
                 <div className="offcanvas-body ms-lg-auto d-flex flex-column h-100">
                     <ul className="navbar-nav">
                         <ListItemLink title="Home" href='/'/>
-
-                        <li className="nav-item dropdown">
-                            <DropdownToggleLink title="Awards" className="nav-link dropdown-toggle"/>
-
-                            <ul className="dropdown-menu">
-                                {/*<ListItemLink href="/awards/winners" title="Winners" linkClassName="dropdown-item"/>*/}
-                                <ListItemLink href="/awards" title="About" linkClassName="dropdown-item"/>
-                                <ListItemLink href="/awards/schedule" title="Schedule" linkClassName="dropdown-item"/>
-                                {/*<ListItemLink href="/awards/location" title="Location" linkClassName="dropdown-item"/>*/}
-                                <ListItemLink href="/awards/categories" title="Categories" linkClassName="dropdown-item"/>
-                                {/*<ListItemLink href="/awards/judges" title="Judges" linkClassName="dropdown-item"/>*/}
-                                {/*<ListItemLink href="/awards/whatsapp" title="WhatsApp Group" linkClassName="dropdown-item" />*/}
-                                {/*<ListItemLink href="/awards/visa" title="Visa Requirements" linkClassName="dropdown-item" />*/}
-                                 <ListItemLink href="/awards/submit" title="Submit Nomination" linkClassName="dropdown-item" />
-                                <li className="dropdown dropdown-submenu dropend">
-                                    <DropdownToggleLink title="2024"/>
-                                    <ul className="dropdown-menu">
-                                        <ListItemLink href="/awards/2024/winners" title="Winners"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2024" title="About"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2024/judges" title="Judges"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2024/location" title='Location'
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2024/schedule" title="Schedule"
-                                                      linkClassName="dropdown-item"/>
-                                    </ul>
-                                </li>
-                                <li className="dropdown dropdown-submenu dropend">
-                                    <DropdownToggleLink title="2023"/>
-                                    <ul className="dropdown-menu">
-                                        <ListItemLink href="/awards/2023/winners" title="Winners"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/about" title="About"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/judges" title="Judges"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/location" title='Location'
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/schedule" title="Schedule"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/events" title="Events"
-                                                      linkClassName="dropdown-item"/>
-                                        <ListItemLink href="/awards/2023/sponsors" title='Sponsors'
-                                                      linkClassName="dropdown-item"/>
-                                    </ul>
-                                </li>
-                            </ul>
-                        </li>
-
+                        <ListItemLink title="About" href='/about'/>
                         <ListItemLink title="Events" href='/events'/>
-
                         <ListItemLink title="Articles" href='/articles'/>
-
-                        <ListItemLink title="Gallery" href='/gallery'/>
-
                         <ListItemLink title="Contact" href='/contact'/>
 
                         {isLoggedIn && currentUser?.user_metadata?.role === 'admin' && (

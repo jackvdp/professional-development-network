@@ -2,8 +2,8 @@
 export const contactInfo = {
     phone: '+44 (0) 20 3137 8648',
     phonePrompt: "tel:+442031378648",
-    email: 'electoral@parlicentre.org',
-    emailPrompt: 'mailto:electoral@parlicentre.org',
+    email: 'professional@parlicentre.org',
+    emailPrompt: 'mailto:professional@parlicentre.org',
     address: '253 Grays Inn Road,\nLondon,\nWC1X 8QT,\nUnited Kingdom',
     about: 'ICPS exists to promote effective policy making and good governance through better interaction between Parliaments, Governments and other stakeholders in society.',
     links: [
