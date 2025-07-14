@@ -8,6 +8,7 @@ import CTA from 'components/blocks/call-to-action/CTA';
 import HomeHeader from 'components/blocks/home/HomeHeader';
 import HomeEventsSidebar from 'components/blocks/events/EventsSidebar';
 import HomeAbout from 'components/blocks/home/HomeAbout';
+import HomeArticles from 'components/blocks/home/HomeArticles';
 import Features from 'components/blocks/features/features';
 import {useAuth} from 'auth/useAuth';
 import CustomHead from "../src/components/common/CustomHead";
@@ -20,7 +21,7 @@ const Home: NextPage = () => {
         <Fragment>
             <CustomHead
                 title="Home"
-                description="Electoral Stakeholders' Network - A global community connecting electoral professionals, managers, and organizations to share knowledge, best practices, and foster collaboration in election management."
+                description="Professional Development Network - A global community connecting public service professionals to share knowledge, best practices, and foster collaboration in professional development."
             />
             <PageProgress/>
 
@@ -41,6 +42,8 @@ const Home: NextPage = () => {
                     </div>
 
                 </div>
+
+                <HomeArticles/>
 
                 <div className='pb-5 pb-md-10'>
                     <Features/>
