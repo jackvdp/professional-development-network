@@ -11,7 +11,7 @@ export interface IEvent extends Document {
     speakers: Speaker[]
 }
 
-interface Speaker {
+export interface Speaker {
     name: string;
     description: string;
     imageURL?: string;
