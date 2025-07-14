@@ -19,9 +19,9 @@ const CustomHead: FC<CustomHeadProps> = ({
                                              author = 'Jack Vanderpump'
                                          }) => {
     const router = useRouter();
-    const siteTitle = "Electoral Stakeholders' Network";
+    const siteTitle = "ICPS Professional Development Network";
     const fullTitle = `${title} | ${siteTitle}`;
-    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://electoralnetwork.org';
+    const baseUrl = process.env.NEXT_PUBLIC_BASE_URL || 'https://professional.parlicentre.org';
     const pageUrl = `${baseUrl}${router.asPath}`;
     // white theme colour
     const themeColor = '#ffffff';

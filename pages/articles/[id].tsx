@@ -8,7 +8,8 @@ import BlogDetailsTemplate from 'components/blocks/article/ArticleDetails';
 import Article, {IArticle} from 'backend/models/article';
 import formatDate from 'helpers/formatArticleDate';
 import dbConnect from 'backend/mongo';
-import CustomHead from "../../src/components/common/CustomHead";
+import CustomHead from "components/common/CustomHead";
+import NextLink from 'components/reuseable/links/NextLink';
 
 export interface ArticleProps {
     category: string;
@@ -44,9 +45,9 @@ const ArticlePage: NextPage<ArticleProps> = (props) => {
                         <div className="row">
                             <div className="col-md-10 col-xl-8 mx-auto">
                                 <div className="post-header">
-                                    {/* <div className="post-category text-line">
+                                    <div className="post-category text-line">
                                         <NextLink href="#" className="hover" title={props.category} />
-                                    </div> */}
+                                    </div>
 
                                     <h1 className="display-1 mb-4">{props.title}</h1>
 

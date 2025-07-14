@@ -4,7 +4,6 @@ import useLightBox from 'hooks/useLightBox';
 // -------- custom component -------- //
 import FigureImage from 'components/reuseable/FigureImage';
 // -------- data -------- //
-// import { ArticleProps } from '../../../../pages/articles/[id]';
 import ReactMarkdown from 'react-markdown';
 
 interface ArticleProps {
@@ -14,14 +13,12 @@ interface ArticleProps {
 }
 
 const BlogDetailsTemplate: FC<ArticleProps> = (props) => {
-    // used for image lightbox
-    // useLightBox();
 
     return (
         <div className="card">
-            {/* {
-        props.image && <FigureImage width={960} height={600} src={props.image} className="card-img-top" />
-      } */}
+            {
+                props.image && <FigureImage width={960} height={600} src={props.image} className="card-img-top" />
+            }
 
             <div className="card-body">
                 <div className="classic-view">

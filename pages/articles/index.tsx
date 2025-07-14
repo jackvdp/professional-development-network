@@ -63,7 +63,7 @@ const ArticlesPage: NextPage<ArticlesProps> = ({articles}) => {
                                                 date={articles[0].date}
                                                 cardTop={
                                                     <figure className="card-img-top overlay overlay-1 hover-scale">
-                                                         <a className="link-dark" href={articles[0].link}>
+                                                         <a className="link-dark" href={"/articles/" + articles[0]._id.toString()}>
                               {
                                 articles[0].image && (
                                   <div style={{ 
