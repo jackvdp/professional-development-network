@@ -4,27 +4,28 @@ import Link from "next/link";
 const HomeAbout: React.FC = () => {
     return (
         <>
-            <h3 className="display-4 mb-3">Global Network for Electoral Excellence</h3>
-            <p className="lead fs-lg lh-sm">Connecting Electoral Leaders, Advancing Excellence in Elections.</p>
+            <h3 className="display-4 mb-3">Professional Development for Public Service Excellence</h3>
+            <p className="lead fs-lg lh-sm">Empowering Public Service Professionals Through Learning and Connection.</p>
             <p className="mb-6">
-                The Electoral Stakeholders’ Network unites electoral leaders, experts, and innovators worldwide to
-                enhance electoral management and democratic integrity. We achieve this through high-impact <b>events,
-                professional training, insightful publications, and our flagship International Electoral Awards</b>,
-                which celebrate excellence in the field.
+                The Professional Development Members' Network connects public service professionals worldwide to
+                enhance skills, share knowledge, and advance careers. We provide access to <b>exclusive learning
+                opportunities, expert-led training, valuable resources, and a supportive community</b> of like-minded
+                professionals.
                 <br/><br/>
-                Through symposiums, webinars, and expert-led discussions, we foster collaboration and share best
-                practices on key issues like electoral integrity, technology, and inclusive participation. Join us in
-                shaping the future of democratic elections.
-                <br/><br/>
-                A one-of-a-kind global recognition, the International Electoral Awards honour those driving innovation,
-                safeguarding electoral integrity, and advancing democracy. From pioneering electoral reforms to ensuring
-                fair and transparent processes, these awards shine a spotlight on individuals and organizations making a
-                real impact in securing the future of elections.
+                Through webinars, articles, events, and networking opportunities, we help you stay current with
+                industry trends, develop new competencies, and build meaningful professional relationships that
+                accelerate your career growth in public service.
             </p>
-            <Link href="/events" className="btn btn-expand btn-primary rounded-pill">
-                <i className="uil uil-arrow-right"></i>
-                <span>See our events</span>
-            </Link>
+            <div className="d-flex gap-3 flex-wrap">
+                <Link href="/articles" className="btn btn-expand btn-primary rounded-pill">
+                    <i className="uil uil-arrow-right"></i>
+                    <span>Explore Articles</span>
+                </Link>
+                <Link href="/events" className="btn btn-expand btn-secondary rounded-pill">
+                    <i className="uil uil-arrow-right"></i>
+                    <span>Explore Events</span>
+                </Link>
+            </div>
         </>
     );
 };

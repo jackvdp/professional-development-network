@@ -87,6 +87,18 @@ const HomeHeader = () => {
                         </figure>
                     </div>
                 </div>
+                
+                {/* Scroll prompt */}
+                <div className="row">
+                    <div className="col-12 text-center mt-8 mt-md-10">
+                        <div className="scroll-indicator">
+                            <p className="text-dark mb-2 fs-md">Scroll to learn more</p>
+                            <div className="scroll-arrow animate-bounce">
+                                <i className="uil uil-angle-down fs-lg text-primary"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     );

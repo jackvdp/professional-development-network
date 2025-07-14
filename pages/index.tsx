@@ -31,7 +31,7 @@ const Home: NextPage = () => {
 
                 <div className="container py-5 py-md-10">
 
-                    <div className="row gx-lg-8 gx-xl-12 pt-md-8">
+                    <div className="row gx-lg-8 gx-xl-12">
                         <div className="col-md-8">
                             <HomeAbout/>
                         </div>
@@ -42,7 +42,7 @@ const Home: NextPage = () => {
 
                 </div>
 
-                <div className='pb-md-8'>
+                <div className='pb-5 pb-md-10'>
                     <Features/>
                 </div>
 
