@@ -90,7 +90,7 @@ const EventsSidebar: React.FC<EventsSidebarProps> = ({ignoreLimit}) => {
 
     return (
         <>
-            {section('Upcoming Events', futureEvents)}
+            {futureEvents.length > 0 && section('Upcoming Events', futureEvents)}
             {pastEvents.length > 0 && section('Past Events', pastEvents)}
         </>
     );

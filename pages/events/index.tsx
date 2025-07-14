@@ -18,7 +18,7 @@ const BlogTwo: NextPage = () => {
         <Fragment>
             <CustomHead
                 title="Events"
-                description="Discover upcoming electoral management events, conferences, workshops, and networking opportunities for election professionals worldwide."
+                description="Discover upcoming professional development events, training sessions, workshops, and networking opportunities for public service professionals worldwide."
             />
             <PageProgress/>
 
@@ -34,8 +34,8 @@ const BlogTwo: NextPage = () => {
                                 <div className="col-md-7 col-lg-6 col-xl-5 mx-auto">
                                     <h1 className="display-1 mb-3">Events</h1>
                                     <p className="lead px-lg-5 px-xxl-8 mb-1">
-                                        Bringing Experts and Leaders Together in a Curated Calendar of Premier Electoral
-                                        Events and Insightful Webinars.
+                                        Connecting Public Service Professionals Through Premier Training Events, 
+                                        Workshops, and Professional Development Opportunities.
                                     </p>
                                 </div>
                             </div>
