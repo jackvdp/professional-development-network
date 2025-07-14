@@ -1,6 +1,7 @@
 // pages/events/[id].tsx
 import {GetServerSideProps, NextPage} from 'next';
 import {IEvent} from 'backend/models/event';
+import Event from 'backend/models/event';
 import React, {Fragment, useEffect, useState} from 'react';
 import PageProgress from 'components/common/PageProgress';
 import {Navbar} from 'components/blocks/navbar';
@@ -19,6 +20,7 @@ import {IBooking} from "backend/models/booking";
 import {createClient} from "backend/supabase/server-props";
 import {getUserBookings} from "backend/use_cases/bookings/getUserBookings";
 import {useRouter} from "next/router";
+import dbConnect from 'backend/mongo';
 
 interface EventPageProps {
     event: IEvent;
@@ -260,20 +262,19 @@ const EventPage: NextPage<EventPageProps> = ({event, userBooking, isLoggedIn: in
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
     const {id} = context.params as { id: string };
-    let event: IEvent;
 
     try {
-        const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
-        if (!baseUrl) {
-            throw new Error('Base URL is undefined');
+        // Connect to database directly (like articles page)
+        await dbConnect();
+        
+        // Find event by ID
+        const event = await Event.findById(id).lean();
+        
+        if (!event) {
+            return {
+                notFound: true
+            };
         }
-        const res = await fetch(`${baseUrl}/api/events/${id}`);
-        if (!res.ok) {
-            context.res.writeHead(302, {Location: '/404'});
-            context.res.end();
-            return {props: {}};
-        }
-        event = await res.json();
 
         // Check if the user is logged in and has a booking for this event
         const supabase = createClient(context);
@@ -289,16 +290,16 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
 
         return {
             props: {
-                event,
+                event: JSON.parse(JSON.stringify(event)),
                 userBooking: usrBooking ? JSON.parse(JSON.stringify(usrBooking)) : null,
                 isLoggedIn
             }
         };
     } catch (err: any) {
-        console.error(err.message);
-        context.res.writeHead(302, {Location: '/404'});
-        context.res.end();
-        return {props: {}};
+        console.error('Error fetching event:', err.message);
+        return {
+            notFound: true
+        };
     }
 };
 
