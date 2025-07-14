@@ -3,6 +3,7 @@ import Link from 'next/link';
 import NextLink from '../links/NextLink';
 import formatDate from 'helpers/formatArticleDate';
 import Style from './BlogCard3.module.css';
+import cardStyles from './BlogCard.module.css';
 import FigureImage from 'components/reuseable/FigureImage';
 
 // ========================================================
@@ -44,8 +45,8 @@ const BlogCard3: FC<BlogCard3Props> = (props) => {
             </h2>
           </div>
 
-          <div className={"post-content " + Style.cutText}>
-            <p>{description}</p>
+          <div className="post-content">
+            <p className={cardStyles.threeLineDescription}>{description}</p>
           </div>
         </div>
 

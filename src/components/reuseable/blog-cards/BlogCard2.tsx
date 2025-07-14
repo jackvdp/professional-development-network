@@ -2,6 +2,7 @@ import Link from 'next/link';
 import { FC, ReactElement } from 'react';
 import NextLink from '../links/NextLink';
 import formatDate from 'helpers/formatArticleDate';
+import styles from './BlogCard.module.css';
 
 // ========================================================
 type BlogCard2Props = {
@@ -34,7 +35,7 @@ const BlogCard2: FC<BlogCard2Props> = (props) => {
           </div>
 
           <div className="post-content">
-            <p>{description}</p>
+            <p className={styles.threeLineDescription}>{description}</p>
           </div>
         </div>
 
