@@ -1,121 +1,90 @@
 import React from 'react';
 import NextLink from 'components/reuseable/links/NextLink';
 import RegisterLink from 'components/reuseable/links/RegisterLink';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import {Autoplay, EffectFade} from 'swiper';
 import {useAuth} from "auth/useAuth";
 import styles from './Home.module.css';
-import 'swiper/css';
-import 'swiper/css/effect-fade';
 import Image from 'next/image';
 
 const HomeHeader = () => {
     const {isLoggedIn} = useAuth();
 
-    const backgroundImages = [
-        '/img/photos/hero.jpeg',
-        '/img/photos/hero10.jpeg',
-        '/img/photos/hero11.jpeg',
-        '/img/photos/hero1.jpeg',
-        '/img/photos/hero5.jpg',
-    ];
-
     return (
-        <section className={`${styles.headerSection} text-white`}>
-            {/* Swiper Background */}
-            <Swiper
-                modules={[Autoplay, EffectFade]}
-                effect="fade"
-                loop={true}
-                slidesPerView={1}
-                speed={1000}
-                autoplay={{
-                    delay: 4000,
-                    disableOnInteraction: false,
-                    pauseOnMouseEnter: false
-                }}
-                className={styles.backgroundSwiper}
-            >
-                {backgroundImages.map((image, index) => (
-                    <SwiperSlide key={index} className={styles.slide}>
-                        <Image
-                            className={styles.slideImage}
-                            alt={`Slide ${index + 1}`}
-                            src={image}
-                            priority={index === 0}
-                            loading={index === 0 ? 'eager' : undefined}
-                            layout='fill'
-                            sizes="100vw"
+        <section className="wrapper bg-light">
+            <div className="container pt-19 pt-md-21 pb-18 pb-md-20">
+                <div className="row gy-10 gy-sm-13 gx-lg-3 align-items-center">
+                    <div className="col-xl-6">
+                        <h1 className="display-1 text-dark mb-4">Professional Development Members' Network</h1>
+                        <p className="lead fs-lg text-dark mb-6">
+                            <strong>Elevate your public service career — enhance skills, connect, and unlock opportunities.</strong>
+                        </p>
+                        <p className="text-dark mb-7">
+                            We understand the importance of continuously learning and growing in your career, which is why we've created a platform for professionals, working in public service, to connect, collaborate, and share knowledge. Our goal is to provide you with the tools and resources you need to excel in your field and reach your full potential.
+                        </p>
+
+                        {!isLoggedIn && (
+                            <div className="d-flex gap-3 flex-wrap">
+                                <NextLink
+                                    title="Explore Articles"
+                                    href="/articles"
+                                    className="btn btn-lg btn-primary rounded"
+                                />
+                                <NextLink
+                                    title="View Events"
+                                    href="/events"
+                                    className="btn btn-lg btn-outline-primary rounded"
+                                />
+                            </div>
+                        )}
+
+                        {isLoggedIn && (
+                            <div className="d-flex gap-3 flex-wrap">
+                                <NextLink
+                                    title="Explore Articles"
+                                    href="/articles"
+                                    className="btn btn-lg btn-primary rounded"
+                                />
+                                <NextLink
+                                    title="View Events"
+                                    href="/events"
+                                    className="btn btn-lg btn-outline-primary rounded"
+                                />
+                            </div>
+                        )}
+
+                        {!isLoggedIn && (
+                            <p className="lead fs-md py-4 text-dark">
+                                Already a member?{' '}
+                                <a
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#modal-signin"
+                                    className="hover more link-primary"
+                                >
+                                    Sign in
+                                </a>
+                            </p>
+                        )}
+                    </div>
+
+                    <div className="col-xl-5 offset-xl-1 position-relative">
+                        <div
+                            className="shape rounded-circle bg-line primary rellax w-18 h-18"
+                            style={{ top: '-2rem', right: '-1.9rem' }}
                         />
-                    </SwiperSlide>
-                ))}
-            </Swiper>
 
-            {/* Overlay */}
-            <div className={styles.overlay}/>
+                        <div
+                            className="shape rounded bg-soft-primary rellax d-md-block"
+                            style={{ width: '85%', height: '90%', left: '-1.5rem', bottom: '-1.8rem' }}
+                        />
 
-            {/* Content */}
-            <div className={styles.contentWrapper}>
-                <div className="container pt-6 pt-md-20 pb-6 pb-md-20">
-                    <div className="row">
-                        <div className="col-md-8 col-lg-7 col-xl-6 col-xxl-6 mt-md-10 mt-6">
-                            <h1 className="display-1 text-white mb-3 text-start">
-                                Electoral Stakeholders&apos; Network
-                            </h1>
-                            <p className="lead fs-lg text-start">
-                                Connecting Leaders in Electoral Management
-                            </p>
-
-                            <p className="text-start">
-                                The Electoral Stakeholders&apos; Network connects electoral professionals, policymakers,
-                                and
-                                innovators to strengthen democracy worldwide. Through symposiums, research, and awards,
-                                we foster knowledge-sharing, international cooperation, and solutions for electoral
-                                integrity, transparency, and voter participation.
-                            </p>
-
-                            {!isLoggedIn && (
-                                <div className="d-flex gap-2">
-                                    <RegisterLink
-                                        title="Register"
-                                        className="btn btn-soft-blue rounded-pill mt-2"
-                                    />
-                                    <NextLink
-                                        title="View Events"
-                                        href="/events"
-                                        className="btn btn-blue rounded-pill mt-2"
-                                    />
-                                </div>
-                            )}
-
-                            {isLoggedIn && (
-                                <div className="d-flex gap-2">
-                                    <NextLink
-                                        title="Awards"
-                                        href="/awards"
-                                        className="btn btn-soft-blue rounded-pill mt-2"
-                                    />
-                                    <NextLink
-                                        title="View Events"
-                                        href="/events"
-                                        className="btn btn-blue rounded-pill mt-2"
-                                    />
-                                </div>
-                            )}
-
-                            {!isLoggedIn && (
-                                <p className={`lead fs-md py-4 text-start ${styles.subtitleText}`}>
-                                    Already a member?{' '}
-                                    <a
-                                        data-bs-toggle="modal"
-                                        data-bs-target="#modal-signin"
-                                        className="hover more link-aqua"
-                                    >
-                                        Sign in
-                                    </a>
-                                </p>
-                            )}
-                        </div>
+                        <figure className="rounded">
+                            <Image
+                                src="/img/photos/unitednations.jpeg"
+                                alt="Professional Development Network"
+                                width={500}
+                                height={400}
+                                className="rounded"
+                            />
+                        </figure>
                     </div>
                 </div>
             </div>
